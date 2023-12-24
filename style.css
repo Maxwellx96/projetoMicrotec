@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Poppins:wght@100;300&display=swap');
 
 *{
     margin: 0;
@@ -13,8 +14,16 @@ body{
     font-family: "Poppins", sans-serif;
 }
 
-.header-mobile{
-    display: none;
+.active{
+    scale: 1;
+    opacity: 1;
+    transition: all 0.4s ease-in-out;
+}
+
+.disable{
+    scale: 0;
+    opacity: 0;
+    transition: all 0.4s ease-in-out;
 }
 
 .header{
@@ -38,10 +47,10 @@ body{
 
 .header-menu ul{
     list-style: none;
-    display: flex;    
-    font-weight: 700;
-    text-transform: uppercase;
-}
+    display: flex;
+    font-family: "Manrope", sans-serif;
+    font-weight: 500;
+    }
 
 .header-menu li{
     padding: 11px;
@@ -55,41 +64,129 @@ body{
     transition: all 0.3s linear;
 }
 
-.social{
-    width: 110px;
+.menu{
+    background: #f1f1f1;
+}
+
+.menu .menu-content{
     display: flex;
-    justify-content: space-between;
+    align-items: center;
+    justify-content: center;
+    padding: 6px;
+    gap: 3px;
 }
 
-.social img{
-    width: 25px;
-    filter: grayscale(1);
+.menu .menu-content .item{
+    width: 130px;
+    height: 100px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 14px;
+    color: #d63031;
+    border-left: #b2bec3 1px solid;         
+    transition: all .3s ease-in-out;  
+}
+
+.menu .menu-content .item:hover{
+    background: #d63031;
+    color: #fff;
+    border-radius: 10px;
+}
+
+.menu .menu-content .item i{
+    font-size: 40px;
+}
+
+.content-container{
+    background: #fff;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+}
+
+.content-container .content{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.content-container .content .card{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    width: 220px;
+    height: 260px;
+    background: #f1f2f6;
+    color: #323232;
+    padding: 20px;
+    font-size: 12px;
+    border-radius: 8px;
+    box-shadow: 0 0 7px 1px #b2bec3 ;
+}
+
+.content-container .content .card img{
+    
+    position: relative;
+    border-radius: 5px;
+    opacity: .8;
+    width: 180px;
+    height: 170px;
+    transition: all 0.2s ease-in-out;
     cursor: pointer;
-    transition: all 0.3s linear;
 }
 
-.social img:hover{
-    transform: scale(1.05);
-    filter: grayscale(0);
+.content-container .content .card img:hover{
+    opacity: 1;
 }
 
-@media (width <= 431px){
-    .header-mobile{
-        background: #f1f2f6;
-        color: #212121;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 100vw;
-    }
 
-    .header-mobile i{
-        cursor: pointer;
-    }
+.content-container .content .card .read-more{
+    display: flex;
+    background: #d63031;
+    padding: 10px;
+    border-radius: 7px;
+    color: #fff;
+    text-transform: uppercase;
+    font-family: "Poppings", sans-serif;
+    font-weight: 600;
+    position: absolute;
+    bottom: -13px;
+    left: 70px;
+    cursor: pointer;
+    transition: all 0.4s ease-in-out;
+}
 
-    .header-menu{
-        display: none;
-    }
+.content-container .content .card .read-more:hover{
+    background: #db5050;
+}
 
-   
+.video-modal{
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 100%;
+    height: 100%;
+    z-index: 12;
+    top: 0;
+}
+
+.video-modal span video{
+    position: absolute;
+    z-index: 22;
+    width: 360px;
+    top: 20px;
+    right: 40vw;
+}
+
+.video-modal i{
+    position: absolute;
+    font-size: 50px;
+    right: 20px;
+    cursor: pointer;
 }
